@@ -1,0 +1,66 @@
+<!--
+Author: Brandon Swanberg, UMass Lowell Computer Science, brandon_swanberg@student.uml.edu
+
+Creation Date: 9/16/2021
+
+GUI Assignment: HW1 Creating Your First Web Page. In this assignment we create our first web page using a basic HTML template and comments for description.
+
+File: index.html
+
+Copyright (c) 2021 by Brandon Swanberg. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+updated by BS on September 16, 2021 at 12:00:00 AM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <!--header -->
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Paris</title>
+    <link rel="stylesheet" href="css/index_main.css">
+    <script src="script.js"></script>
+  </head>
+  <body class="body">
+    <!-- body content -->
+    <div class = "flag left">
+      <!-- Paris overview and quotes. -->
+      <div class="inside">
+        <h1>Paris, France</h1>
+        <p>Paris is a city in France. It has a population of almost 11 million people. It is the 29th most populus city in the world.</p>
+        <h2>“There is but one Paris, and however hard living may be here, and if it became worse and harder even—the French air clears up the brain and does good—a world of good.”</h2>
+        <h3>Vincent Van Gogh</h3>
+      </div>
+    </div>
+    <div class = "flag middle">
+      <!-- Paris Reviews -->
+      <div class="inside">
+        <div class = "review">
+          <h1>
+            <img alt="cat" src="assets/cat1.PNG" height="40" width="40" /> Spooky
+          </h1>
+          <p>&#11088;&#11088;&#11088;&#11088;&#11088; Loved it!</p>
+        </div>
+                <div class = "review">
+          <h1>
+            <img alt="cat" src="assets/cat2.PNG" height="40" width="40" /> Domino
+          </h1>
+          <p>&#11088;&#11088; Bad snails.</p>
+        </div>
+          <div class = "review">
+          <h1>
+            <img alt="cat" src="assets/cat3.PNG" height="40" width="40" /> Snickers
+          </h1>
+          <p>&#11088;&#11088;&#11088;&#11088;&#11088; Puuuuuuurfect!</p>
+        </div>
+      </div>
+    </div>
+    <div class = "flag right">
+      <!-- Paris Interactive Map -->
+      <div class="inside">
+        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCksUKTV35Q8GEE9oRlRPnjnQgZsiUlsQs&q=Paris,France">
+        </iframe>
+      </div>
+    </div>
+  </body>
+</html>
