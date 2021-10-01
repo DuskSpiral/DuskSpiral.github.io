@@ -1,66 +1,56 @@
-<!--
-Author: Brandon Swanberg, UMass Lowell Computer Science, brandon_swanberg@student.uml.edu
-
-Creation Date: 9/16/2021
-
-GUI Assignment: HW1 Creating Your First Web Page. In this assignment we create our first web page using a basic HTML template and comments for description.
-
-File: index.html
-
-Copyright (c) 2021 by Brandon Swanberg. All rights reserved. May be freely copied or
-excerpted for educational purposes with credit to the author.
-updated by BS on September 16, 2021 at 12:00:00 AM
--->
-
 <!DOCTYPE html>
 <html lang="en">
-  <!--header -->
-  <head>
+<head>
+    <title>Pacific Trails Resort</title>
     <meta charset="utf-8">
-    <title>Welcome to Paris</title>
-    <link rel="stylesheet" href="css/index_main.css">
-    <script src="script.js"></script>
-  </head>
-  <body class="body">
-    <!-- body content -->
-    <div class = "flag left">
-      <!-- Paris overview and quotes. -->
-      <div class="inside">
-        <h1>Paris, France</h1>
-        <p>Paris is a city in France. It has a population of almost 11 million people. It is the 29th most populus city in the world.</p>
-        <h2>“There is but one Paris, and however hard living may be here, and if it became worse and harder even—the French air clears up the brain and does good—a world of good.”</h2>
-        <h3>Vincent Van Gogh</h3>
-      </div>
-    </div>
-    <div class = "flag middle">
-      <!-- Paris Reviews -->
-      <div class="inside">
-        <div class = "review">
-          <h1>
-            <img alt="cat" src="assets/cat1.PNG" height="40" width="40" /> Spooky
-          </h1>
-          <p>&#11088;&#11088;&#11088;&#11088;&#11088; Loved it!</p>
+    <link href="pacific.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--[if lt IE 9]>
+   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"> </script>   <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Pacific Trails Resort</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="yurts.html">Yurts</a>
+                </li>
+                <li><a href="activities.html">Activities</a>
+                </li>
+                <li><a href="reservations.html">Reservations</a>
+            </ul>
+        </nav>
+        <div id="content">
+            <h2>Enjoy Nature in Luxury</h2>
+            <img src="coast.jpg" alt="Pacific Coast">
+            <p><span class="resort">Pacific Trails Resort</span> offers a special lodging experience on the California North Coast. Relax in serenity with panoramic views of the Pacific Ocean.</p>
+            <ul>
+                <li>Private yurts with decks overlooking the ocean</li>
+                <li>Activities lodge with fireplace and gift shop</li>
+                <li>Nightly fine dining at the Overlook Cafe</li>
+                <li>Heated outdoor pool and whirlpool</li>
+                <li>Guided hiking tours of the redwoods</li>
+            </ul>
+            <div id="contact">
+                <span class="resort">Pacific Trails Resort</span>
+                <br> 12010 Pacific Trails Road
+                <br> Zephyr, CA 95555
+                <br>
+                <br> 888-555-5555
+                <br>
+                <br>
+            </div>
         </div>
-                <div class = "review">
-          <h1>
-            <img alt="cat" src="assets/cat2.PNG" height="40" width="40" /> Domino
-          </h1>
-          <p>&#11088;&#11088; Bad snails.</p>
-        </div>
-          <div class = "review">
-          <h1>
-            <img alt="cat" src="assets/cat3.PNG" height="40" width="40" /> Snickers
-          </h1>
-          <p>&#11088;&#11088;&#11088;&#11088;&#11088; Puuuuuuurfect!</p>
-        </div>
-      </div>
+        <footer>
+            Copyright &copy; 2014 Pacific Trails Resort
+            <br>
+            <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
+        </footer>
     </div>
-    <div class = "flag right">
-      <!-- Paris Interactive Map -->
-      <div class="inside">
-        <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCksUKTV35Q8GEE9oRlRPnjnQgZsiUlsQs&q=Paris,France">
-        </iframe>
-      </div>
-    </div>
-  </body>
+</body>
+
 </html>
