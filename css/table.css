@@ -1,0 +1,44 @@
+/**
+ * Brandon Swanberg, UMass Lowell Computer Science, brandon_swanberg@student.uml.edu
+ * HW 3 Building Multiplication Tables CSS
+ */
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	width: 100%;
+	background-color: lightslategrey;
+}
+
+#multDiv {
+	background-color: lightgrey;
+	width: 500px;
+	height: 500px;
+	overflow: scroll;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+#submitBody {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+table, th, td {
+	border: 2px solid black;
+	padding: 5px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+	background-color: lightsalmon;
+}
+
+tr:nth-child(odd) {
+	background-color: lightseagreen;
+}
