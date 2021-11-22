@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+    Brandon Swanberg, UMass Lowell Computer Science, brandon_swanberg@student.uml.edu
+    HW 4 Building Multiplication Tables HTML w/ jQuery part 1
+-->
+    
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>HW 3 Building Multiplaction Tables</title>
+        <!-- stylsheets -->
+        <link rel="stylesheet" href="css/table.css">
+    </head>
+    <body>
+        <div id="submitBody">
+            <p>Enter 4 numbers separated by commas with Multipliers and Multiplicands:
+                <form onsubmit="return false" id="inputNumbersForm"> 
+                    <br>
+                    Multiplier Minimum: <input type="text" name="inputNumbers1" id="inputNumbers1">
+                    <br>
+                    Multiplier Maximum: <input type="text" name="inputNumbers2" id="inputNumbers2">
+                    <br>
+                    Multiplicand Minimum: <input type="text" name="inputNumbers3" id="inputNumbers3">
+                    <br>
+                    Multiplicand Maximum: <input type="text" name="inputNumbers4" id="inputNumbers4">
+                    <br>
+                    <input type="submit" name="Submit"></button>
+                </form>
+            </p>
+        </div>
+        <div id=multDiv>
+                <!-- table we replace when values are calculated -->
+                <table id="multTable">
+                    <tr>
+                        <td>Multiplication Table!</td>
+                    </tr>
+            </table>
+        </div>
+        <!-- scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        <script type="text/javascript" src="js/table.js"></script>
+    </body>
+</html>
