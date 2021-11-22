@@ -3,6 +3,9 @@
  * HW 4 Building Multiplication Tables Javascript w/ jQuery part 2
 */
 
+// create an id for tabs
+var tabId = 0;
+
 // build sliders
 $(document).ready(function(){
     // set default values for bindings
@@ -56,6 +59,12 @@ $(document).ready(function(){
 // build tabs
 $(document).ready(function(){
     $('#multTabs').tabs();
+    // close tab when clicked
+    $('.closeIcon').click(function() {
+        console.log('test');
+        var tabIdToClose = $(this).attr("id");
+        console.log(tabIdToClose);
+    });
 });
 
 // jQuery validation, documentation located https://jqueryvalidation.org/
@@ -109,27 +118,27 @@ $(document).ready(function(){
             buildTable();
         }
     });
+
+    // check if multiplicand 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplierLessThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
+    }, '<-- Please enter multiplier value less than or equal to other multiplier value.');
+
+    // check if multiplicand 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplierGreaterThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
+    }, '<-- Please enter multiplier value greater thanor equal to  other multiplier value.');
+
+    // check if multiplier 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplicandLessThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
+    }, '<-- Please enter multiplier value less thanor equal to  other multiplier value.');
+
+    // check if multiplier 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplicandGreaterThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
+    }, '<-- Please enter multiplier value greater than or equal to other multiplier value.');
 });
-
-// check if multiplicand 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplierLessThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
-}, '<-- Please enter multiplier value less than or equal to other multiplier value.');
-
-// check if multiplicand 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplierGreaterThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
-}, '<-- Please enter multiplier value greater thanor equal to  other multiplier value.');
-
-// check if multiplier 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplicandLessThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
-}, '<-- Please enter multiplier value less thanor equal to  other multiplier value.');
-
-// check if multiplier 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplicandGreaterThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
-}, '<-- Please enter multiplier value greater than or equal to other multiplier value.');
 
 function buildTable()
 {
@@ -212,13 +221,15 @@ function buildTable()
     multTable.innerHTML = expandedMultArrayHtml;
 
     // create tab
-    // var stringOfValues = document.getElementById('inputNumbers1') + ',' + document.getElementById('inputNumbers2') + document.getElementById('inputNumbers3') + ',' + document.getElementById('inputNumbers4');
-    // $('multTabLinks').append('<li><a href="#' + stringOfValues + '">' + stringOfValues + '</a></li>');
-    console.log('test');
-    // $('#multTabsLinks').append('<li><a href="#c">Tab 3</a></li>');
-    // $('#multTabs').append('<div id="c"></div>');
-    // $('#multTabs').tabs();
- 
+    var stringOfValues = inputNumbers1 + ',' + inputNumbers2 + ',' + inputNumbers3 + ',' + inputNumbers4;
+    $('#multTabsLinks').append('<li><a href=tab-' + tabId + '>' + stringOfValues + '<span id=' + tabId + ' class="closeIcon ui-icon ui-icon-close"></span></a></li>');
+    $('#multTabs').append('<div id="tab-' + tabId + '">' + expandedMultArrayHtml + '</div>');
+    
+    // add html to tab
+    document.getElementById('tab-' + tabId).innerHTML = '<table id="multTable-"' + tabId + '>' + expandedMultArrayHtml + '</table>';
+    $('#multTabs').tabs("refresh");
+
+    tabId++;
     // replace HTML in multTable div to update the table
     document.getElementById('multDiv').replaceChild(multTable, document.getElementById('multTable'));
 }
