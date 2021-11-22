@@ -54,27 +54,27 @@ $(document).ready(function(){
             buildTable();
         }
     });
+
+    // check if multiplicand 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplierLessThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
+    }, '<-- Please enter multiplier value less than or equal to other multiplier value.');
+
+    // check if multiplicand 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplierGreaterThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
+    }, '<-- Please enter multiplier value greater thanor equal to  other multiplier value.');
+
+    // check if multiplier 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplicandLessThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
+    }, '<-- Please enter multiplier value less thanor equal to  other multiplier value.');
+
+    // check if multiplier 1 is less than multiplicand 2
+    jQuery.validator.addMethod('multiplicandGreaterThan', function(value, element) {
+        return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
+    }, '<-- Please enter multiplier value greater than or equal to other multiplier value.');
 });
-
-// check if multiplicand 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplierLessThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
-}, '<-- Please enter multiplier value less than or equal to other multiplier value.');
-
-// check if multiplicand 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplierGreaterThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers1').value) <= parseInt(document.getElementById('inputNumbers2').value));
-}, '<-- Please enter multiplier value greater thanor equal to  other multiplier value.');
-
-// check if multiplier 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplicandLessThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
-}, '<-- Please enter multiplier value less thanor equal to  other multiplier value.');
-
-// check if multiplier 1 is less than multiplicand 2
-jQuery.validator.addMethod('multiplicandGreaterThan', function(value, element) {
-    return (parseInt(document.getElementById('inputNumbers3').value) <= parseInt(document.getElementById('inputNumbers4').value));
-}, '<-- Please enter multiplier value greater than or equal to other multiplier value.');
 
 function buildTable()
 {
