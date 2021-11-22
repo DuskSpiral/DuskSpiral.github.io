@@ -1,6 +1,6 @@
-Website: DuskSpiral.github.io
+Website: https://duskspiral.github.io/hw4_part1/
 
-Repo: https://github.com/DuskSpiral/DuskSpiral.github.io
+Repo: https://github.com/DuskSpiral/DuskSpiral.github.io/tree/main/hw4_part1
 
 <!--
 Author: Brandon Swanberg, UMass Lowell Computer Science, brandon_swanberg@student.uml.edu
