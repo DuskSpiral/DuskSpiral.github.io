@@ -8,13 +8,13 @@ $( function() {
   // create initial board state
   boardState = {
     'boardState': {
-      's_0_0': {'multiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_1': {'multiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_2': {'multiplier': 2, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_3': {'multiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_4': {'multiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_5': {'multiplier': 3, 'tileUniqueID': 'none', 'value': 'none'},
-      's_0_6': {'multiplier': 1, 'tileUniqueID': 'none', 'value': 'none'}
+      's_0_0': {'multiplier': 1, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_1': {'multiplier': 1, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_2': {'multiplier': 1, 'wordMultiplier': 2, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_3': {'multiplier': 1, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_4': {'multiplier': 1, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_5': {'multiplier': 2, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'},
+      's_0_6': {'multiplier': 1, 'wordMultiplier': 1, 'tileUniqueID': 'none', 'value': 'none'}
     },
     'trayState': {
       't_0': {'tileUniqueID': 'none', 'value': 'none'},
@@ -199,15 +199,17 @@ $( function() {
   function calculateScore()
   {
     let tempCount = 0;
+    let worldMultiplierCount = 1;
     for (var key in boardState.boardState)
     {
       if (boardState.boardState[key].value == 'none')
       {
         continue;
       }
-      tempCount = tempCount + getPoints(boardState.boardState[key].value);
+      tempCount = tempCount + ((getPoints(boardState.boardState[key].value)*boardState.boardState[key].multiplier));
+      worldMultiplierCount = worldMultiplierCount * boardState.boardState[key].wordMultiplier;
     }
-    return tempCount;
+    return tempCount*worldMultiplierCount;
   }
 
   function getPoints(letter)
